@@ -10,6 +10,7 @@ class SegmentEntry:
     Each entry contains a unix timestamp, latitude coordinate, longitude coordinate, and 4 bytes of unknown purpose.
     The unix timestamp is stored as a 4 byte integer. The latitude and longitude are stored as 4 byte floats.
 
+    Any errors generated can be retrieved using get_warnings()
     """
 
     def __init__(self, entry):
@@ -17,7 +18,6 @@ class SegmentEntry:
 
         :param entry: the 16 bytes which constitute an entry in the segment file
         :type entry: bytes
-        .. todo:: add error handling for failed byte conversions
         """
 
         self.warnings = []
@@ -25,17 +25,29 @@ class SegmentEntry:
             warn = "Error, Segment Entry is not 16 byte length"
             self.warnings.append(warn)
         else:
-            # convert the bytes into an int.
-            self.timestamp_int = int.from_bytes(entry[:4], "little")
+            try:
+                # convert the bytes into an int.
+                self.timestamp_int = int.from_bytes(entry[:4], "little")
+            except Exception as error:
+                self.warnings.append(error)
 
-            # convert the bytes into a float
-            self.lat_float = struct.unpack('f', entry[4:8])[0]
+            try:
+                # convert the bytes into a float
+                self.lat_float = struct.unpack('f', entry[4:8])[0]
+            except Exception as error:
+                self.warnings.append(error)
 
-            # convert the bytes into a float
-            self.long_float = struct.unpack('f', entry[8:12])[0]
+            try:
+                # convert the bytes into a float
+                self.long_float = struct.unpack('f', entry[8:12])[0]
+            except Exception as error:
+                self.warnings.append(error)
 
-            # store the 4 unknown bytes as bytes
-            self.unknown = entry[12:]
+            try:
+                # store the 4 unknown bytes as bytes
+                self.unknown = entry[12:]
+            except Exception as error:
+                self.warnings.append(error)
 
     def __str__(self):
         """A descriptive String representation of the SegmentEntry.
