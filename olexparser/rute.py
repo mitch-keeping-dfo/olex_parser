@@ -11,9 +11,17 @@ class Rute:
     :type rute: str
 
     .. note::
+        The plottsett value corresponds to the Layer name in Olex.
+
+        The plottsett value is 2**N where N is the index of the layer name.
+
+        For example, Layer "A" is at index 0 and Layer "A1" is index 10. The plottsett value for "A" would be 2**0 = 1.
+
+        The plottsett value for "A1" would be 2**10 = 1024.
+    .. note::
         The plottsett value of 65 seems to break the power of 2 relationship
         between the plottsett number and layer.
-        Casting all numbers as int seems to give the correct values and maintains the relationship.
+        Casting all numbers as :class:`int` seems to give the correct values and maintains the relationship.
         No special case for plottsett 65 (layer G) is required.
 
     .. todo:: check for more possible rute options
@@ -39,7 +47,7 @@ class Rute:
         rute_entry_re = r'([-\d.]+) ([-\d.]+) (\d+) (.+)'  # Rute Data points
 
         self.rute_entries = []
-        self.plottsett = ""
+        self.plottsett = -1  # all plottsett are a positive value
         self.layer = ""
         self.rute_type = ""
         self.rute_color = ""
@@ -116,16 +124,15 @@ class Rute:
         return
 
     def get_rute_entries(self):
-        """Returns the list of identified RuteEntry objects
-
-        :return: the list of identified RuteEntry objects
+        """
+        :return: the list of identified :class:`RuteEntry` objects
         :rtype: list
         """
         return self.rute_entries
 
     def get_plottsett(self):
         """
-        :return: the plottsett (Plot Layer) number
+        :return: the plottsett (Plot Layer) number, or -1 if there was an error
         :rtype: int
         """
         return self.plottsett
