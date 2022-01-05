@@ -40,6 +40,20 @@ class RuteEntry:
         self.timestamp = int(timestamp)
         self.icon = str(icon)
 
+    def __str__(self):
+        """A descriptive string representation of the Rute class
+        :return: String representation of the Rute class
+        :rtype: str
+        """
+        s = "\nRute Entry Latitude float: {} Latitude coordinate: {}".format(
+            self.lat, convert.get_lat_dmm(self.lat))
+        s = s + "\nRute Entry Longitude float: {} Longitude coordinate: {}".format(
+            self.long, convert.get_lat_dmm(self.long))
+        s = s + "\nRute Entry Unix Timestamp: {} Timestamp converted to UTC: {}".format(
+            self.timestamp, convert.get_timestamp_str_from_int(self.timestamp))
+        s = s + "\nRute Entry Icon: {}".format(self.icon)
+        return s
+
     def print_rute_entry(self):
         """Prints a description of the RuteEntry contents.
         """
