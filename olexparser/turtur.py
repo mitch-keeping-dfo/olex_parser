@@ -153,14 +153,12 @@ class TurTur:
         :rtype: str
         """
 
-        s = "\n*****"
-        s = s + "\nTur Tur Number: {}".format(self.tur_num)
+        s = "\nTur Tur Number: {}".format(self.tur_num)
         if len(self.segments_summaries) > 0:
             for i in self.segments_summaries:
-                s = s + "\n" + str(i)
+                s = s + i.__str__()
         else:
             s = s + "\nNo Segment Summaries found for this Tur Tur."
-        s = s + "\n*****"
         return s
 
     def get_warnings(self):

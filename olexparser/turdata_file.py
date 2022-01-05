@@ -117,14 +117,13 @@ class TurDataFile:
 
         """
 
-        s = "\n**********\nTurdata filepath: {}".format(self.full_path)
+        s = "\nTurdata filepath: {}".format(self.full_path)
 
         if len(self.tur_turs.keys()) > 0:
             for i in self.tur_turs.keys():
-                s = s + "\n" + str(self.tur_turs[i])
+                s = s + self.tur_turs[i].__str__()
         else:
             s = s + "\nNo Tur Turs found in the this Turdata file."
-        s = s + "\n**********"
         return s
 
     def print_turdata(self):

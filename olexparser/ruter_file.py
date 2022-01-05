@@ -39,15 +39,14 @@ class RuterFile:
         :returns: A string describing the contents of the RuterFile
         :rtype: str
         """
-        s = "\n**********"
-        s = s + "\nRuter file path: {}".format(self.full_path)
+
+        s = "\nRuter file path: {}".format(self.full_path)
         s = s + "\nRutes:"
         if len(self.rutes) > 0:
             for i in self.rutes:
-                s = s + "\n" + str(i)
+                s = s + i.__str__()
         else:
             s = s + "\nNo rutes found in this Ruter file."
-        s = s + "\n**********"
         return s
 
     def print_ruter(self):

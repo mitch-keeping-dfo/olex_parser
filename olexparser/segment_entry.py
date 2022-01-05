@@ -38,18 +38,18 @@ class SegmentEntry:
             self.unknown = entry[12:]
 
     def __str__(self):
-        """String representation of the SegmentEntry.
+        """A descriptive String representation of the SegmentEntry.
 
         :return: A descriptive string with known values converted.
         :rtype: str
         """
-        s = "Unix Timestamp: {} Timestamp converted UTC: {}\n".format(
+        s = "\nUnix Timestamp: {} Timestamp converted UTC: {}".format(
             self.timestamp_int, convert.get_timestamp_str_from_int(self.timestamp_int))
-        s = s + "Latitude float: {} Latitude coordinate: {}\n".format(
+        s = s + "\nLatitude float: {} Latitude coordinate: {}".format(
             self.lat_float, convert.get_lat_dmm(self.lat_float))
-        s = s + "Longitude float: {} Longitude coordinate: {}\n".format(
+        s = s + "\nLongitude float: {} Longitude coordinate: {}".format(
             self.long_float, convert.get_long_dmm(self.long_float))
-        s = s + "4 bytes of unknown purpose: {}".format(self.unknown)
+        s = s + "\n4 bytes of unknown purpose: {}".format(self.unknown)
         return s
 
     def print_segment_entry(self):

@@ -38,17 +38,15 @@ class SegmentFile:
         :rtype: str
         """
 
-        s = "\n**********"
-        s = s + "\nSegment filepath: {}".format(self.full_path)
+        s = "\nSegment filepath: {}".format(self.full_path)
         s = s + "\nSegment number: {}".format(self.seg_num)
         s = s + "\nSegment file size: {}".format(self.file_size)
         if len(self.seg_entries.keys()) > 0:
             for i in self.seg_entries.keys():
                 s = s + "\nSegment Entry at offset {} contains:".format(i)
-                s = s + "\n" + str(self.seg_entries[i])
+                s = s + self.seg_entries[i].__str__()
         else:
             s = s + "\nNo Segment entries found in this Segment."
-        s = s + "\n**********"
 
         return s
 
