@@ -1,29 +1,32 @@
 import datetime
 import math
+import pytz
 
 
-def get_timestamp_str_from_bytes(time_bytes):
-    """Takes little endian bytes representing a Unix Timestamp integer and returns it as a datetime string
+def get_timestamp_str_from_bytes(time_bytes, timezone=pytz.timezone("UTC")):
+    """Takes little endian bytes representing a Unix Timestamp integer and returns it as a datetime
 
     :param time_bytes: little endian bytes representing a Unix Timestamp integer
     :type time_bytes: bytes
-
-    :return: a Datetime
-    :rtype: datetime.datetime
+    :param timezone: optional Timezone information. Defaults to UTC
+    :type timezone: datetime.tzinfo
+    :return: :class:`datetime.datetime`
+    :rtype: :class:`datetime.datetime`
     """
-    return datetime.datetime.fromtimestamp(int.from_bytes(time_bytes, "little"))
+    return datetime.datetime.fromtimestamp(int.from_bytes(time_bytes, "little"), tz=timezone)
 
 
-def get_timestamp_str_from_int(time_int):
-    """Takes an integer and returns it as a datetime string
+def get_timestamp_str_from_int(time_int, timezone=pytz.timezone("UTC")):
+    """Takes an integer and returns it as a datetime
 
     :param time_int: an int representing a Unix Timestamp
     :type time_int: int
-
-    :return: a Datetime
-    :rtype: datetime.datetime
+    :param timezone: optional Timezone information. Defaults to UTC
+    :type timezone: :class:`datetime.tzinfo`
+    :return: :class:`datetime.datetime`
+    :rtype: :class:`datetime.datetime`
     """
-    return datetime.datetime.fromtimestamp(time_int)
+    return datetime.datetime.fromtimestamp(time_int, tz=timezone)
 
 
 def get_lat_dmm(lat):
@@ -37,10 +40,12 @@ def get_lat_dmm(lat):
     """
     lat_d = math.trunc(math.fabs(lat / 60))
     lat_m = math.fabs(lat) - (math.fabs(lat_d) * 60)
+    lat_m = str(lat_m)
+    lat_m = lat_m[:lat_m.index('.')+4]
     if lat > 0:
-        return str(lat_d) + "'" + str(lat_m) + " N"
+        return str(lat_d) + "'" + lat_m + " N"
     else:
-        return str(lat_d) + "'" + str(lat_m) + " S"
+        return str(lat_d) + "'" + lat_m + " S"
 
 
 def get_long_dmm(long):
@@ -54,10 +59,12 @@ def get_long_dmm(long):
     """
     long_d = math.trunc(math.fabs(long / 60))
     long_m = math.fabs(long) - (math.fabs(long_d) * 60)
+    long_m = str(long_m)
+    long_m = long_m[:long_m.index('.')+4]
     if long > 0:
-        return str(long_d) + "'" + str(long_m) + " E"
+        return str(long_d) + "'" + long_m + " E"
     else:
-        return str(long_d) + "'" + str(long_m) + " W"
+        return str(long_d) + "'" + long_m + " W"
 
 
 def get_lat_or_long_dd(lat_or_long):
@@ -73,4 +80,3 @@ def get_lat_or_long_dd(lat_or_long):
     lat_m = (lat_or_long - (lat_d * 60)) / 60
     lat_dd = lat_d + lat_m
     return lat_dd
-
