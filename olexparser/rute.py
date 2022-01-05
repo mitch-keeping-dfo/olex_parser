@@ -99,6 +99,26 @@ class Rute:
         if re.match(rute_entry_re, notes[-1]) is None:
             self.notes_text = notes[-1]
 
+    def __str__(self):
+        """A descriptive string representation of the Rute class
+        :return: String representation of the Rute class
+        :rtype: str
+        """
+        s = "\nRute Name: {}".format(self.rute_name)
+        if self.rute_type != "":
+            s = s + "\nRute Type: {}".format(self.rute_type)
+        if self.rute_color != "":
+            s = s + "\nLine Color: {}".format(self.rute_color)
+        if self.layer != "":
+            s = s + "\nRute Layer: {} (Converted from Plottsett: {})".format(self.layer, self.plottsett)
+        if len(self.rute_entries) > 0:
+            s = s + "\nRute Entries:"
+            for i in self.rute_entries:
+                s = s + i.__str__()
+        if self.notes_text != "":
+            s = s + "\nRute Notes: {}".format(self.notes_text)
+        return s
+
     def print_rute(self):
         """Prints a description of the contents of the Rute
         """
