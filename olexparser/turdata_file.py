@@ -62,7 +62,8 @@ class TurDataFile:
 
         # Read the Turdata file
         try:
-            tur_file = open(self.full_path, 'r').read()
+            with open(self.full_path, 'r') as f:
+                tur_file = f.read()
         except Exception as error:
             self.warnings.append(error)
             return

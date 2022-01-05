@@ -27,11 +27,7 @@ class RuterFile:
         self.rutes = []
         self.warnings = []
 
-        if self.check_header():
-            self.find_rutes()
-        else:
-            warn = "Warning, Ruter file does not have proper header: {}".format(self.full_path)
-            self.warnings.append(warn)
+        self.find_rutes()
         return
 
     def __str__(self):
@@ -70,7 +66,8 @@ class RuterFile:
         :return: True is valid, false otherwise
         :rtype: bool
         """
-        header = open(self.full_path, 'r').readline()
+        with open(self.full_path, 'r') as data:
+            header = data.readline()
         if header != "Ferdig forenklet\n":
             return False
         else:
@@ -81,12 +78,20 @@ class RuterFile:
 
         Identified Rutes are stored in a list.
         """
-        rute_re = r'Rute.*?\n\n'
-        ruter_file_data = open(self.full_path, 'r').read()
-        rute_matches = re.findall(rute_re, ruter_file_data, re.DOTALL)
+        if self.check_header():
+            rute_re = r'Rute.*?\n\n'
+            try:
+                with open(self.full_path, 'r') as data:
+                    ruter_file_data = data.read()
+                rute_matches = re.findall(rute_re, ruter_file_data, re.DOTALL)
 
-        for rute in rute_matches:
-            self.rutes.append(Rute(rute))
+                for rute in rute_matches:
+                    self.rutes.append(Rute(rute))
+            except Exception as error:
+                self.warnings.append(error)
+        else:
+            warn = "Warning, Ruter file does not have proper header: {}".format(self.full_path)
+            self.warnings.append(warn)
         return
 
     def get_full_path(self):
@@ -101,7 +106,7 @@ class RuterFile:
         :return: A list of Rutes identified in the RuterFile
         :rtype: list
         """
-        return self.rutes
+        return self.rutes.copy()
 
     def get_warnings(self):
         """
@@ -112,4 +117,3 @@ class RuterFile:
         for rute in self.rutes:
             warn.extend(rute.get_warnings())
         return warn
-

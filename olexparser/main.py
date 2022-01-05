@@ -1,5 +1,4 @@
 import os
-import re
 import sys
 import gpxpy
 import olexparser.convert as convert

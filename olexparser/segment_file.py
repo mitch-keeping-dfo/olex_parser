@@ -91,7 +91,8 @@ class SegmentFile:
             self.file_size = os.path.getsize(self.full_path)
 
             try:
-                data = open(self.full_path, 'rb').read()
+                with open(self.full_path, 'rb') as f:
+                    data = f.read()
                 size_diff = self.file_size % 16
                 if size_diff != 0:
                     warn = "Warning, file size of Segment {} not divisible by 16. May not be valid Segment file or " \
