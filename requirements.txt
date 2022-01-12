@@ -1,2 +1,3 @@
 sphinx
 gpxpy
+sphinx_autodoc_typehints
