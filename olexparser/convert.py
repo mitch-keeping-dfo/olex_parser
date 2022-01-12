@@ -49,12 +49,12 @@ def get_lat_dmm(lat):
 
 
 def get_long_dmm(long):
-    """Takes an OLEX float and converts it into DMM longitude notation (eg. 51'6.432 W)
+    """Takes an OLEX float and converts it into DMM longitude notation (e.g. 51'6.432 W)
 
     :param long: An 'Olex float' representing a longitude coordinate.
     :type long: float
 
-    :return: A longitude coordinate (eg. 51'6.432 W)
+    :return: A longitude coordinate (e.g. 51'6.432 W)
     :rtype: str
     """
     long_d = math.trunc(math.fabs(long / 60))
@@ -68,12 +68,12 @@ def get_long_dmm(long):
 
 
 def get_lat_or_long_dd(lat_or_long):
-    """Takes an OLEX float and converts it into DD notation (eg. -74.003)
+    """Takes an OLEX float and converts it into DD notation (e.g. -74.003)
 
     :param lat_or_long: An 'Olex float' representing either a latitude ot longitude coordinate.
     :type lat_or_long: float
 
-    :return: A DD notation coordinate (eg. -74.003)
+    :return: A DD notation coordinate (e.g. -74.003)
     :rtype: float
     """
     lat_d = math.trunc(math.fabs(lat_or_long) / 60)

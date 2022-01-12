@@ -50,7 +50,7 @@ class TurTurSegmentSummary:
                  largest_time):
         """A constructor method for the TurTurSegmentSummary.
 
-        :param seg_num: A number identifying the related Segment filename. ie. if the segment number is 83 the
+        :param seg_num: A number identifying the related Segment filename. i.e. if the segment number is 83 the
                         filename will be "segment83_A".
         :type seg_num: int
         :param num_entries: The number of entries in the segment file. Each entry is 16 bytes in length. This number
@@ -157,21 +157,21 @@ class TurTurSegmentSummary:
 
     def get_long_start_float(self):
         """
-        :return: the the "OLEX" float representing smallest longitude value
+        :return: the "OLEX" float representing the smallest longitude value
         :rtype: float
         """
         return self.smallest_long
 
     def get_lat_end_float(self):
         """
-       :return: the the "OLEX" float representing largest latitude value
+       :return: the "OLEX" float representing the largest latitude value
        :rtype: float
         """
         return self.largest_lat
 
     def get_long_end_float(self):
         """
-        :return: the the "OLEX" float representing the largest longitude value
+        :return: the "OLEX" float representing the largest longitude value
         :rtype: float
         """
         return self.largest_long
