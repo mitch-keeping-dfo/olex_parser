@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>olexparser package &mdash; olexparser 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="olexparser" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> olexparser
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">olexparser</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">olexparser package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.convert">olexparser.convert module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.main">olexparser.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.rute">olexparser.rute module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.rute_entry">olexparser.rute_entry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.ruter_file">olexparser.ruter_file module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.segment_entry">olexparser.segment_entry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.segment_file">olexparser.segment_file module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.turdata_file">olexparser.turdata_file module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.turtur">olexparser.turtur module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-olexparser.turtur_segment_summary">olexparser.turtur_segment_summary module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">olexparser</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">olexparser</a> &raquo;</li>
+      <li>olexparser package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/olexparser.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="olexparser-package">
+<h1>olexparser package<a class="headerlink" href="#olexparser-package" title="Permalink to this headline"></a></h1>
+<section id="module-olexparser.convert">
+<span id="olexparser-convert-module"></span><h2>olexparser.convert module<a class="headerlink" href="#module-olexparser.convert" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.convert.get_lat_dmm">
+<span class="sig-prename descclassname"><span class="pre">olexparser.convert.</span></span><span class="sig-name descname"><span class="pre">get_lat_dmm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.convert.get_lat_dmm" title="Permalink to this definition"></a></dt>
+<dd><p>Takes an OLEX float and converts it into DMM latitude notation (eg. 51’6.432 N)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lat</strong> (<em>float</em>) – An ‘Olex float’ representing a latitude coordinate.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A latitude coordinate (eg. 51’6.432 N)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.convert.get_lat_or_long_dd">
+<span class="sig-prename descclassname"><span class="pre">olexparser.convert.</span></span><span class="sig-name descname"><span class="pre">get_lat_or_long_dd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat_or_long</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.convert.get_lat_or_long_dd" title="Permalink to this definition"></a></dt>
+<dd><p>Takes an OLEX float and converts it into DD notation (e.g. -74.003)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lat_or_long</strong> (<em>float</em>) – An ‘Olex float’ representing either a latitude ot longitude coordinate.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A DD notation coordinate (e.g. -74.003)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.convert.get_long_dmm">
+<span class="sig-prename descclassname"><span class="pre">olexparser.convert.</span></span><span class="sig-name descname"><span class="pre">get_long_dmm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">long</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.convert.get_long_dmm" title="Permalink to this definition"></a></dt>
+<dd><p>Takes an OLEX float and converts it into DMM longitude notation (e.g. 51’6.432 W)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>long</strong> (<em>float</em>) – An ‘Olex float’ representing a longitude coordinate.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A longitude coordinate (e.g. 51’6.432 W)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.convert.get_timestamp_str_from_bytes">
+<span class="sig-prename descclassname"><span class="pre">olexparser.convert.</span></span><span class="sig-name descname"><span class="pre">get_timestamp_str_from_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timezone=&lt;UTC&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.convert.get_timestamp_str_from_bytes" title="Permalink to this definition"></a></dt>
+<dd><p>Takes little endian bytes representing a Unix Timestamp integer and returns it as a datetime</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_bytes</strong> (<em>bytes</em>) – little endian bytes representing a Unix Timestamp integer</p></li>
+<li><p><strong>timezone</strong> (<em>datetime.tzinfo</em>) – optional Timezone information. Defaults to UTC</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.convert.get_timestamp_str_from_int">
+<span class="sig-prename descclassname"><span class="pre">olexparser.convert.</span></span><span class="sig-name descname"><span class="pre">get_timestamp_str_from_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timezone=&lt;UTC&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.convert.get_timestamp_str_from_int" title="Permalink to this definition"></a></dt>
+<dd><p>Takes an integer and returns it as a datetime</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_int</strong> (<em>int</em>) – an int representing a Unix Timestamp</p></li>
+<li><p><strong>timezone</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.tzinfo</span></code>) – optional Timezone information. Defaults to UTC</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-olexparser.main">
+<span id="olexparser-main-module"></span><h2>olexparser.main module<a class="headerlink" href="#module-olexparser.main" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.main">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.main" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.parsed_turdata_data_to_gpx">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">parsed_turdata_data_to_gpx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.parsed_turdata_data_to_gpx" title="Permalink to this definition"></a></dt>
+<dd><p>Converts the contents of a parsed Turdata file into a GPX string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a string containing the Turdata file contents as GPX format</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>gpxpy.gpx.GPX()</p>
+</dd>
+</dl>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>complete gpx conversions</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.print_all">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">print_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.print_all" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.print_other">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">print_other</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.print_other" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.print_ruters">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">print_ruters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.print_ruters" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.print_segments">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">print_segments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.print_segments" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.print_turdatas">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">print_turdatas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.print_turdatas" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.print_warnings">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">print_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.print_warnings" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.usage">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">usage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.usage" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="olexparser.main.walk_folder">
+<span class="sig-prename descclassname"><span class="pre">olexparser.main.</span></span><span class="sig-name descname"><span class="pre">walk_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.main.walk_folder" title="Permalink to this definition"></a></dt>
+<dd><p>Parse a folder structure and identify OLEX files, including the Ruter file, the Turdata file,
+and segment files</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>folder</strong> (<em>str</em>) – Source folder for Olex files</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-olexparser.rute">
+<span id="olexparser-rute-module"></span><h2>olexparser.rute module<a class="headerlink" href="#module-olexparser.rute" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="olexparser.rute.Rute">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">olexparser.rute.</span></span><span class="sig-name descname"><span class="pre">Rute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rute</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class used to represent a Rute found in the <a class="reference internal" href="#olexparser.ruter_file.RuterFile" title="olexparser.ruter_file.RuterFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Olex</span> <span class="pre">Ruter</span> <span class="pre">file</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rute</strong> (<em>str</em>) – a string containing a Rute from the Ruter file</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The plottsett value corresponds to the Layer name in Olex.</p>
+<p>The plottsett value is 2**N where N is the index of the layer name.</p>
+<p>For example, Layer “A” is at index 0 and Layer “A1” is index 10. The plottsett value for “A” would be 2**0 = 1.</p>
+<p>The plottsett value for “A1” would be 2**10 = 1024.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The plottsett value of 65 seems to break the power of 2 relationship
+between the plottsett number and layer.
+Casting all numbers as <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code> seems to give the correct values and maintains the relationship.
+No special case for plottsett 65 (layer G) is required.</p>
+</div>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>check for more possible rute options</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute.Rute.get_layer">
+<span class="sig-name descname"><span class="pre">get_layer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute.get_layer" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The Layer the Rute uses within Olex.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute.Rute.get_notes">
+<span class="sig-name descname"><span class="pre">get_notes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute.get_notes" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Any notes present</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute.Rute.get_plottsett">
+<span class="sig-name descname"><span class="pre">get_plottsett</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute.get_plottsett" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the plottsett (Plot Layer) number, or -1 if there was an error</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute.Rute.get_rute_color">
+<span class="sig-name descname"><span class="pre">get_rute_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute.get_rute_color" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The color (in Norwegian) of the Rute when it is displayed in Olex</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute.Rute.get_rute_entries">
+<span class="sig-name descname"><span class="pre">get_rute_entries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute.get_rute_entries" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the list of identified <code class="xref py py-class docutils literal notranslate"><span class="pre">RuteEntry</span></code> objects</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute.Rute.get_rute_name">
+<span class="sig-name descname"><span class="pre">get_rute_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute.get_rute_name" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The Rute name</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute.Rute.get_rute_type">
+<span class="sig-name descname"><span class="pre">get_rute_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute.get_rute_type" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The Rute type</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute.Rute.get_warnings">
+<span class="sig-name descname"><span class="pre">get_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute.get_warnings" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of warnings generated by the Rute, and it’s child objects</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute.Rute.print_rute">
+<span class="sig-name descname"><span class="pre">print_rute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute.Rute.print_rute" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a description of the contents of the Rute</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-olexparser.rute_entry">
+<span id="olexparser-rute-entry-module"></span><h2>olexparser.rute_entry module<a class="headerlink" href="#module-olexparser.rute_entry" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="olexparser.rute_entry.RuteEntry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">olexparser.rute_entry.</span></span><span class="sig-name descname"><span class="pre">RuteEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute_entry.RuteEntry" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class used to represent a Rute Entry from the <a class="reference internal" href="#olexparser.ruter_file.RuterFile" title="olexparser.ruter_file.RuterFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Olex</span> <span class="pre">Ruter</span> <span class="pre">file</span></code></a></p>
+<p>Each entry represents a point on the map for it’s parent <a class="reference internal" href="#olexparser.rute.Rute" title="olexparser.rute.Rute"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rute</span></code></a></p>
+<dl class="simple">
+<dt>Each entry consists of:</dt><dd><ul class="simple">
+<li><p>a latitude coordinate</p></li>
+<li><p>a longitude coordinate</p></li>
+<li><p>a unix timestamp</p></li>
+<li><p>a text descriptor of the icon for the entry</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> (<em>float</em>) – the “Olex float” of a latitude coordinate</p></li>
+<li><p><strong>long</strong> (<em>float</em>) – the “Olex float” of a longitude coordinate</p></li>
+<li><p><strong>timestamp</strong> (<em>int</em>) – a Unix timestamp</p></li>
+<li><p><strong>icon</strong> (<em>str</em>) – a string describing the icon used for the entry</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute_entry.RuteEntry.get_icon_str">
+<span class="sig-name descname"><span class="pre">get_icon_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute_entry.RuteEntry.get_icon_str" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the string describing the icon</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute_entry.RuteEntry.get_lat_float">
+<span class="sig-name descname"><span class="pre">get_lat_float</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute_entry.RuteEntry.get_lat_float" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the ‘Olex float’ representing the latitude coordinate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute_entry.RuteEntry.get_long_float">
+<span class="sig-name descname"><span class="pre">get_long_float</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute_entry.RuteEntry.get_long_float" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the ‘Olex float’ representing the longitude coordinate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute_entry.RuteEntry.get_timestamp_int">
+<span class="sig-name descname"><span class="pre">get_timestamp_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute_entry.RuteEntry.get_timestamp_int" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the Unix timestamp</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute_entry.RuteEntry.get_warnings">
+<span class="sig-name descname"><span class="pre">get_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute_entry.RuteEntry.get_warnings" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of warnings generated by the RuteEntry</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.rute_entry.RuteEntry.print_rute_entry">
+<span class="sig-name descname"><span class="pre">print_rute_entry</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.rute_entry.RuteEntry.print_rute_entry" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a description of the RuteEntry contents.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-olexparser.ruter_file">
+<span id="olexparser-ruter-file-module"></span><h2>olexparser.ruter_file module<a class="headerlink" href="#module-olexparser.ruter_file" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="olexparser.ruter_file.RuterFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">olexparser.ruter_file.</span></span><span class="sig-name descname"><span class="pre">RuterFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.ruter_file.RuterFile" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a Ruter file.</p>
+<p>A ruter file consists of a number of Rutes (Routes).
+See <a class="reference internal" href="#olexparser.rute.Rute" title="olexparser.rute.Rute"><code class="xref py py-class docutils literal notranslate"><span class="pre">olexparser.rute.Rute</span></code></a> for a description of a Rute.</p>
+<p>The Ruter file is a text file. The first line of the file will be  “Ferdig forenklet” (“Completely simplified”).
+This line may also appear elsewhere in the file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>str</em>) – the full file path of the Ruter file</p>
+</dd>
+</dl>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>more Ruter file research. # of rutes between ferdig? ais? saving trips as rutes?</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.ruter_file.RuterFile.check_header">
+<span class="sig-name descname"><span class="pre">check_header</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.ruter_file.RuterFile.check_header" title="Permalink to this definition"></a></dt>
+<dd><p>Internal method to check if the file is a valid Ruter file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True is valid, false otherwise</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.ruter_file.RuterFile.find_rutes">
+<span class="sig-name descname"><span class="pre">find_rutes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.ruter_file.RuterFile.find_rutes" title="Permalink to this definition"></a></dt>
+<dd><p>Internal method to parse the Ruter file and identify individual Rutes based on a regular expression.</p>
+<p>Identified Rutes are stored in a list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.ruter_file.RuterFile.get_full_path">
+<span class="sig-name descname"><span class="pre">get_full_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.ruter_file.RuterFile.get_full_path" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The full path of the Ruter File</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.ruter_file.RuterFile.get_rutes">
+<span class="sig-name descname"><span class="pre">get_rutes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.ruter_file.RuterFile.get_rutes" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of Rutes identified in the RuterFile</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.ruter_file.RuterFile.get_warnings">
+<span class="sig-name descname"><span class="pre">get_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.ruter_file.RuterFile.get_warnings" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of warnings generated by the RuterFile, and it’s child objects</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.ruter_file.RuterFile.print_ruter">
+<span class="sig-name descname"><span class="pre">print_ruter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.ruter_file.RuterFile.print_ruter" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a description of the contents of the RuterFile</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-olexparser.segment_entry">
+<span id="olexparser-segment-entry-module"></span><h2>olexparser.segment_entry module<a class="headerlink" href="#module-olexparser.segment_entry" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="olexparser.segment_entry.SegmentEntry">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">olexparser.segment_entry.</span></span><span class="sig-name descname"><span class="pre">SegmentEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_entry.SegmentEntry" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a 16 byte entry from a segment file</p>
+<p>Each segment file consists of a number of 16 byte entries.
+Each entry contains a unix timestamp, latitude coordinate, longitude coordinate, and 4 bytes of unknown purpose.
+The unix timestamp is stored as a 4 byte integer. The latitude and longitude are stored as 4 byte floats.</p>
+<p>Any errors generated can be retrieved using get_warnings()</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_entry.SegmentEntry.get_lat_float">
+<span class="sig-name descname"><span class="pre">get_lat_float</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_entry.SegmentEntry.get_lat_float" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return float</dt>
+<dd class="field-odd"><p>the ‘Olex float’ representing a latitude coordinate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_entry.SegmentEntry.get_long_float">
+<span class="sig-name descname"><span class="pre">get_long_float</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_entry.SegmentEntry.get_long_float" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the ‘Olex float’ representing a longitude coordinate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_entry.SegmentEntry.get_timestamp_int">
+<span class="sig-name descname"><span class="pre">get_timestamp_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_entry.SegmentEntry.get_timestamp_int" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the integer representing a unix timestamp</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_entry.SegmentEntry.get_unknown">
+<span class="sig-name descname"><span class="pre">get_unknown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_entry.SegmentEntry.get_unknown" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The 4 unknown bytes at the end of an entry.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_entry.SegmentEntry.get_warnings">
+<span class="sig-name descname"><span class="pre">get_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_entry.SegmentEntry.get_warnings" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of warnings generated by the SegmentEntry</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_entry.SegmentEntry.print_segment_entry">
+<span class="sig-name descname"><span class="pre">print_segment_entry</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_entry.SegmentEntry.print_segment_entry" title="Permalink to this definition"></a></dt>
+<dd><p>Prints the converted data from the 16 bytes</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-olexparser.segment_file">
+<span id="olexparser-segment-file-module"></span><h2>olexparser.segment_file module<a class="headerlink" href="#module-olexparser.segment_file" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="olexparser.segment_file.SegmentFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">olexparser.segment_file.</span></span><span class="sig-name descname"><span class="pre">SegmentFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_file.SegmentFile" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Class representing a Segment file.</p>
+<p>A Segment file consists of a number of 16 byte entries.
+See <a class="reference internal" href="#olexparser.segment_entry.SegmentEntry" title="olexparser.segment_entry.SegmentEntry"><code class="xref py py-class docutils literal notranslate"><span class="pre">olexparser.segment_entry.SegmentEntry</span></code></a> for a description of a segment entry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – the full file path of the Segment file</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_file.SegmentFile.get_full_path">
+<span class="sig-name descname"><span class="pre">get_full_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_file.SegmentFile.get_full_path" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the full file path for the segment file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the full file path of the segment file.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_file.SegmentFile.get_seg_entries">
+<span class="sig-name descname"><span class="pre">get_seg_entries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_file.SegmentFile.get_seg_entries" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the dictionary of SegmentEntry objects with key:value - file_offset:SegmentEntry</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the dictionary of SegmentEntry objects with key:value - file_offset:SegmentEntry</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_file.SegmentFile.get_seg_num">
+<span class="sig-name descname"><span class="pre">get_seg_num</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_file.SegmentFile.get_seg_num" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the segment number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The segment number</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_file.SegmentFile.get_size">
+<span class="sig-name descname"><span class="pre">get_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_file.SegmentFile.get_size" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the file size in bytes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the size of the file (in bytes)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_file.SegmentFile.get_warnings">
+<span class="sig-name descname"><span class="pre">get_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_file.SegmentFile.get_warnings" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of warnings generated by the SegmentFile, and it’s child objects</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_file.SegmentFile.parse_segment_file">
+<span class="sig-name descname"><span class="pre">parse_segment_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_file.SegmentFile.parse_segment_file" title="Permalink to this definition"></a></dt>
+<dd><p>Internal method which parses the segment file.</p>
+<p>parse_segment_file reads the segment file as a binary stream and creates a SegmentEntry object
+for each 16 byte line in the file. A warning is generated if the file is not divisible by 16,
+and the remaining bytes are ignored.</p>
+<p>See <a class="reference internal" href="#olexparser.segment_entry.SegmentEntry" title="olexparser.segment_entry.SegmentEntry"><code class="xref py py-class docutils literal notranslate"><span class="pre">SegmentEntry</span></code></a> for a description of a segment entry.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.segment_file.SegmentFile.print_segment">
+<span class="sig-name descname"><span class="pre">print_segment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.segment_file.SegmentFile.print_segment" title="Permalink to this definition"></a></dt>
+<dd><p>Prints the contents of the segment file</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-olexparser.turdata_file">
+<span id="olexparser-turdata-file-module"></span><h2>olexparser.turdata_file module<a class="headerlink" href="#module-olexparser.turdata_file" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="olexparser.turdata_file.TurDataFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">olexparser.turdata_file.</span></span><span class="sig-name descname"><span class="pre">TurDataFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turdata_file.TurDataFile" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Class used to represent a Turdata file.</p>
+<p>The Turdata file consists of a collection of Tur Turs (Trips).</p>
+<p>See <a class="reference internal" href="#olexparser.turtur.TurTur" title="olexparser.turtur.TurTur"><code class="xref py py-class docutils literal notranslate"><span class="pre">TurTur</span></code></a> for a description of a Tur Tur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>full_path</strong> (<em>str</em>) – The full path and filename for the Turdata file</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turdata_file.TurDataFile.get_full_path">
+<span class="sig-name descname"><span class="pre">get_full_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turdata_file.TurDataFile.get_full_path" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the full path of the TurData file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the full path of the TurData file</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turdata_file.TurDataFile.get_tur_numbers">
+<span class="sig-name descname"><span class="pre">get_tur_numbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turdata_file.TurDataFile.get_tur_numbers" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the keys from the dictionary of Tur Turs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the keys from the dictionary of Tur Turs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict_keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turdata_file.TurDataFile.get_turtur">
+<span class="sig-name descname"><span class="pre">get_turtur</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turdata_file.TurDataFile.get_turtur" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the TurTur object identified by the Tur Tur number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>number</strong> (<em>int</em>) – The Tur Tur number to retrieve.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the TurTur object identified by the Tur Tur number.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#olexparser.turtur.TurTur" title="olexparser.turtur.TurTur">olexparser.turtur.TurTur</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turdata_file.TurDataFile.get_warnings">
+<span class="sig-name descname"><span class="pre">get_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turdata_file.TurDataFile.get_warnings" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of warnings generated by the TurDataFile, and it’s child objects</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turdata_file.TurDataFile.print_turdata">
+<span class="sig-name descname"><span class="pre">print_turdata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turdata_file.TurDataFile.print_turdata" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a description of the contents of the TurDataFile</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turdata_file.TurDataFile.read_tur_data_file">
+<span class="sig-name descname"><span class="pre">read_tur_data_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turdata_file.TurDataFile.read_tur_data_file" title="Permalink to this definition"></a></dt>
+<dd><p>Reads the Turdata file and identifies individual Tur Turs (Trips).</p>
+<p>The entire file is read and regular expressions are used to identify Tur Turs in the file.
+A TurTur object is created for each Tur Tur. It contains the Tur Tur number and a list of segment summaries.
+The TurTur object added to the dict tur_turs with it’s Tur Tur number as the key.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-olexparser.turtur">
+<span id="olexparser-turtur-module"></span><h2>olexparser.turtur module<a class="headerlink" href="#module-olexparser.turtur" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="olexparser.turtur.TurTur">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">olexparser.turtur.</span></span><span class="sig-name descname"><span class="pre">TurTur</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tur_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tur_segment_summaries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur.TurTur" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Class used to represent a Tur Tur (trip) from the Turdata file.</p>
+<p>Each Tur Tur consists of a Tur Tur number, as well as summaries of the segment files associated to the Tur Tur.</p>
+<p>An example of a Tur Tur from a Turdata file is as follows</p>
+<blockquote>
+<div><p>Tur Tur 42</p>
+<p>Segment 197 1818 2986.74 -3246.82 3100.01 -3235.69 1417854557 1417862055</p>
+</div></blockquote>
+<p>See <a class="reference internal" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary" title="olexparser.turtur_segment_summary.TurTurSegmentSummary"><code class="xref py py-class docutils literal notranslate"><span class="pre">TurTurSegmentSummary</span></code></a>
+for a description of a segment summary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tur_num</strong> (<em>int</em>) – the Tur Tur number as listed in the Turdata file</p></li>
+<li><p><strong>tur_segment_summaries</strong> (<em>list</em>) – A list of TurTurSegmentSummaries.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>check that min/max values in summary match min/max in segment file</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur.TurTur.add_segment">
+<span class="sig-name descname"><span class="pre">add_segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seg_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur.TurTur.add_segment" title="Permalink to this definition"></a></dt>
+<dd><p>Adds <a class="reference internal" href="#olexparser.segment_file.SegmentFile" title="olexparser.segment_file.SegmentFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">SegmentFile</span></code></a> to the TurTur.</p>
+<p>Generates a warning if a SegmentFile with seg_num is already associated to the TurTur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seg_num</strong> (<em>int</em>) – A number identifying the related Segment filename. i.e. if the segment number is 83 the
+filename will be “segment83_A”.</p></li>
+<li><p><strong>segment</strong> (<a class="reference internal" href="#olexparser.segment_file.SegmentFile" title="olexparser.segment_file.SegmentFile"><em>SegmentFile</em></a>) – a <a class="reference internal" href="#olexparser.segment_file.SegmentFile" title="olexparser.segment_file.SegmentFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">SegmentFile</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur.TurTur.check_sample_sizes">
+<span class="sig-name descname"><span class="pre">check_sample_sizes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur.TurTur.check_sample_sizes" title="Permalink to this definition"></a></dt>
+<dd><p>A method for checking if given size of the segment file in summary is the same as the actual size on disk.</p>
+<p>Adds a warning if different.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur.TurTur.get_segment">
+<span class="sig-name descname"><span class="pre">get_segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seg_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur.TurTur.get_segment" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seg_num</strong> – The segment number of the <a class="reference internal" href="#olexparser.segment_file.SegmentFile" title="olexparser.segment_file.SegmentFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">SegmentFile</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The <a class="reference internal" href="#olexparser.segment_file.SegmentFile" title="olexparser.segment_file.SegmentFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">SegmentFile</span></code></a> with the provided segment number.
+Returns None if no SegmentFile with seg_number is associated to the TurTur</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#olexparser.segment_file.SegmentFile" title="olexparser.segment_file.SegmentFile">SegmentFile</a>, None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur.TurTur.get_segment_numbers">
+<span class="sig-name descname"><span class="pre">get_segment_numbers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur.TurTur.get_segment_numbers" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The segment numbers of every <a class="reference internal" href="#olexparser.segment_file.SegmentFile" title="olexparser.segment_file.SegmentFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">SegmentFile</span></code></a> associated
+to the TurTur</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur.TurTur.get_segment_summaries">
+<span class="sig-name descname"><span class="pre">get_segment_summaries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur.TurTur.get_segment_summaries" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a list of Segment Summaries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of TurTurSegmentSummary objects representing each segment summary identified in the Tur Tur.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur.TurTur.get_tur_num">
+<span class="sig-name descname"><span class="pre">get_tur_num</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur.TurTur.get_tur_num" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Tur Tur Number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the Tur Tur Number</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur.TurTur.get_warnings">
+<span class="sig-name descname"><span class="pre">get_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur.TurTur.get_warnings" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of warnings generated by the TurTur, and it’s child objects</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur.TurTur.print_turtur">
+<span class="sig-name descname"><span class="pre">print_turtur</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur.TurTur.print_turtur" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a description of the contents of the TurTur</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-olexparser.turtur_segment_summary">
+<span id="olexparser-turtur-segment-summary-module"></span><h2>olexparser.turtur_segment_summary module<a class="headerlink" href="#module-olexparser.turtur_segment_summary" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">olexparser.turtur_segment_summary.</span></span><span class="sig-name descname"><span class="pre">TurTurSegmentSummary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seg_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_entries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smallest_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smallest_long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">largest_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">largest_long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smallest_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">largest_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Class representing a Tur Tur Segment Summary.</p>
+<p>Each Tur Tur in the Turdata file lists 1 or more segment files associated to it.
+A summary of the segment file is also stored in the Turdata file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These summaries may contain the only remaining data as the actual segment file may be empty.</p>
+<p>Further analysis is needed to determine how a segment file becomes empty (0 bytes).</p>
+</div>
+<p>Each Segment Summary contains the following:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The segment number.</p></li>
+<li><p>The number of 16 byte entries in the segment file.</p></li>
+<li><p>The smallest latitude value found in the file.</p></li>
+<li><p>The smallest longitude value found in the file.</p></li>
+<li><p>The largest latitude value found in the file.</p></li>
+<li><p>The largest longitude value found in the file.</p></li>
+<li><p>The smallest unix timestamp value found in the file.</p></li>
+<li><p>The largest unix timestamp value found in the file.</p></li>
+</ol>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seg_num</strong> (<em>int</em>) – A number identifying the related Segment filename. ie. if the segment number is 83 the filename
+will be “segment83_A”.</p></li>
+<li><p><strong>num_entries</strong> (<em>int</em>) – The number of entries in the segment file. Each entry is 16 bytes in length. This number
+can be used to determine the expected file size of the segment.</p></li>
+<li><p><strong>smallest_lat</strong> (<em>float</em>) – An “Olex float” containing the smallest Latitude position in the segment file.</p></li>
+<li><p><strong>smallest_long</strong> (<em>float</em>) – An “Olex float” containing the smallest Latitude position in the segment file.</p></li>
+<li><p><strong>largest_lat</strong> (<em>float</em>) – An “Olex float” containing the largest Latitude position in the segment file.</p></li>
+<li><p><strong>largest_long</strong> (<em>float</em>) – An “Olex float” containing the largest Longitude position in the segment file.</p></li>
+<li><p><strong>smallest_time</strong> (<em>int</em>) – A Unix Timestamp of the first entry in the segment file.</p></li>
+<li><p><strong>largest_time</strong> (<em>int</em>) – A Unix Timestamp of the last entry in the segment file.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>Determine how a segment file becomes 0 bytes</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.get_entries_num">
+<span class="sig-name descname"><span class="pre">get_entries_num</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.get_entries_num" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the number of entries in the segment file</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.get_lat_end_float">
+<span class="sig-name descname"><span class="pre">get_lat_end_float</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.get_lat_end_float" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the “OLEX” float representing the largest latitude value</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.get_lat_start_float">
+<span class="sig-name descname"><span class="pre">get_lat_start_float</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.get_lat_start_float" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the “OLEX” float representing smallest latitude value</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.get_long_end_float">
+<span class="sig-name descname"><span class="pre">get_long_end_float</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.get_long_end_float" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the “OLEX” float representing the largest longitude value</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.get_long_start_float">
+<span class="sig-name descname"><span class="pre">get_long_start_float</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.get_long_start_float" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the “OLEX” float representing the smallest longitude value</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.get_seg_num">
+<span class="sig-name descname"><span class="pre">get_seg_num</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.get_seg_num" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the segment number</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.get_time_end_int">
+<span class="sig-name descname"><span class="pre">get_time_end_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.get_time_end_int" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the Unix Timestamp integer representing the largest time value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.get_time_start_int">
+<span class="sig-name descname"><span class="pre">get_time_start_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.get_time_start_int" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the Unix Timestamp integer representing the smallest time value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.get_warnings">
+<span class="sig-name descname"><span class="pre">get_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.get_warnings" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of warnings generated by the TurTurSegmentSummary</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="olexparser.turtur_segment_summary.TurTurSegmentSummary.print_segment_summary">
+<span class="sig-name descname"><span class="pre">print_segment_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#olexparser.turtur_segment_summary.TurTurSegmentSummary.print_segment_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a description of the contents of the TurTurSegmentSummary.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="olexparser" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Mitchell Keeping.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
