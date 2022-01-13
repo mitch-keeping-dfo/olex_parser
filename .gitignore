@@ -3,3 +3,5 @@
 /_static/
 /_templates/
 /olexparser/four_byte_analysis.py
+/sphinx/
+/.idea/
