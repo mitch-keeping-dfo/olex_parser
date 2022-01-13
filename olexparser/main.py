@@ -1,7 +1,6 @@
 import os
 import sys
-import gpxpy
-import olexparser.convert as convert
+
 from olexparser.turdata_file import TurDataFile
 from olexparser.ruter_file import RuterFile
 from olexparser.segment_file import SegmentFile
@@ -38,45 +37,6 @@ def walk_folder(folder):
             else:
                 other_files.append(dir_path + "//" + filename)
     return
-
-
-def parsed_turdata_data_to_gpx():
-    """Converts the contents of a parsed Turdata file into a GPX string
-
-    :return: a string containing the Turdata file contents as GPX format
-    :rtype: gpxpy.gpx.GPX()
-
-    .. todo:: complete gpx conversions
-    """
-    gpx = gpxpy.gpx.GPX()
-    for turdata in tur_data_files_parsed:
-        for tur_tur_number in turdata.get_tur_numbers():
-            tur_tur = turdata.get_turtur(tur_tur_number)
-
-            trip = gpxpy.gpx.GPXTrack()
-            gpx.tracks.append(trip)
-
-            trip.name = "Tur Tur {}".format(tur_tur_number)
-            gpx_track_segment = gpxpy.gpx.GPXTrackSegment()
-            trip.segments.append(gpx_track_segment)
-            segments_summaries = tur_tur.get_segment_summaries()
-            for summary in segments_summaries:
-                start_lat = convert.get_lat_or_long_dd(summary.get_lat_start_float())
-                start_long = convert.get_lat_or_long_dd(summary.get_long_start_float())
-                start_time = convert.get_timestamp_str_from_int(summary.get_time_start_int())
-                start_comment = "Segment {} start values".format(summary.get_seg_num())
-                start_point = gpxpy.gpx.GPXTrackPoint(start_lat, start_long, time=start_time, comment=start_comment)
-
-                stop_lat = convert.get_lat_or_long_dd(summary.get_lat_end_float())
-                stop_long = convert.get_lat_or_long_dd(summary.get_long_end_float())
-                stop_time = convert.get_timestamp_str_from_int(summary.get_time_end_int())
-                stop_comment = "Segment {} stop values".format(summary.get_seg_num())
-                stop_point = gpxpy.gpx.GPXTrackPoint(stop_lat, stop_long, time=stop_time, comment=stop_comment)
-
-                gpx_track_segment.points.append(start_point)
-                gpx_track_segment.points.append(stop_point)
-
-    return gpx
 
 
 def print_ruters():
