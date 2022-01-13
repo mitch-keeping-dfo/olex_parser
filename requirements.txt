@@ -1,3 +1,5 @@
 sphinx
 gpxpy
 sphinx_autodoc_typehints
+sphinx_rtd_theme
+pytz
