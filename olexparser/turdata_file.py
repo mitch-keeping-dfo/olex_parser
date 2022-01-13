@@ -3,7 +3,6 @@ from olexparser.turtur_segment_summary import TurTurSegmentSummary
 from olexparser.turtur import TurTur
 
 
-# noinspection GrazieInspection
 class TurDataFile:
     """
     A Class used to represent a Turdata file.
@@ -82,7 +81,7 @@ class TurDataFile:
             segment_summaries = re.findall(tur_segment_summary_re, i)
 
             # Create a TurTurSegmentSummary for each identified segment summary
-            tur_segment_summaries = []
+            tur_segment_summaries = {}
             for summary in segment_summaries:
                 seg_num = int(summary[0])
                 num_entries = int(summary[1])
@@ -92,9 +91,10 @@ class TurDataFile:
                 largest_long = float(summary[5])
                 smallest_time = int(summary[6])
                 largest_time = int(summary[7])
-                segment_summary = TurTurSegmentSummary(seg_num, num_entries, smallest_lat, smallest_long, largest_lat,
-                                                       largest_long, smallest_time, largest_time)
-                tur_segment_summaries.append(segment_summary)
+
+                tur_segment_summaries[seg_num] = TurTurSegmentSummary(seg_num, num_entries, smallest_lat, smallest_long,
+                                                                      largest_lat, largest_long, smallest_time,
+                                                                      largest_time)
 
             # add the TurTur to the tur_turs dict
             self.tur_turs[tur_num] = TurTur(tur_num, tur_segment_summaries)
