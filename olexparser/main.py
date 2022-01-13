@@ -10,7 +10,7 @@ turdata_file = []
 tur_data_files_parsed = []
 
 segment_files = {}
-segment_files_parsed = []
+segment_files_no_turtur = []
 
 ruter_file = []
 ruter_files_parsed = []
@@ -34,7 +34,7 @@ def walk_folder(folder):
             elif filename == "Ruter":
                 ruter_file.append(dir_path + "//" + filename)
             elif filename.endswith("_A"):
-                segment_files[filename] = dir_path + "//" + filename
+                segment_files[filename.strip("segment").strip("_A")] = dir_path + "//" + filename
             else:
                 other_files.append(dir_path + "//" + filename)
     return
@@ -86,7 +86,7 @@ def print_ruters():
 
 
 def print_segments():
-    for i in segment_files_parsed:
+    for i in segment_files_no_turtur:
         i.print_segment()
     return
 
@@ -119,10 +119,14 @@ def print_all():
 
 
 def print_warnings():
-    if len(warnings) > 0:
-        print("WARNINGS:")
-        for i in warnings:
-            print(i)
+    for i in warnings:
+        print(i)
+    for turdata in tur_data_files_parsed:
+        print(turdata.get_warnings())
+    for ruter in ruter_files_parsed:
+        print(ruter.get_warnings())
+    for seg in segment_files_no_turtur:
+        print(seg.get_warnings())
     return
 
 
@@ -130,25 +134,39 @@ def main():
     if len(sys.argv) < 2:
         usage()
         return
+
     walk_folder(sys.argv[1])
+
     if len(turdata_file) != 1:
         warn = "Warning, there should be exactly 1 Tur data file"
         warnings.append(warn)
     for i in turdata_file:
-        tur_data_files_parsed.append(TurDataFile(i))
+        turdata = TurDataFile(i)
+        tur_data_files_parsed.append(turdata)
 
     if len(ruter_file) != 1:
         warn = "Warning, there should be exactly 1 Ruter file"
         warnings.append(warn)
     for i in ruter_file:
-        ruter_files_parsed.append(RuterFile(i))
+        ruter = RuterFile(i)
+        ruter_files_parsed.append(ruter)
 
-    # ..todo:: associate segment files to tur turs
+    # ..todo:: test associate segment files to tur turs
+
+    for turdatafile in tur_data_files_parsed:
+        turnums = turdatafile.get_tur_numbers()
+        for turnum in turnums:
+            turtur = turdatafile.get_turtur(turnum)
+            for seg_num in turtur.get_segment_numbers():
+                if seg_num in segment_files.keys():
+                    turtur.add_segment(seg_num, SegmentFile(segment_files[seg_num]))
+                    segment_files.pop(seg_num)
+
     if len(segment_files) > 0:
         for i in segment_files.keys():
-            warn = "Warning, Segment {} is not associated with a Tur Tur".format(i)
+            warn = "Warning, Segment at {} is not associated with a Tur Tur".format(segment_files[i])
             warnings.append(warn)
-            segment_files_parsed.append(SegmentFile(segment_files[i]))
+            segment_files_no_turtur.append(SegmentFile(segment_files[i]))
     return
 
 
@@ -159,4 +177,5 @@ def usage():
 
 if __name__ == '__main__':
     main()
+    print_all()
     print_warnings()
