@@ -26,7 +26,7 @@ class TurTur:
     def __init__(self, tur_num, tur_segment_summaries):
         """A constructor method for TurTur
 
-        :param tur_num: the Tur Tur number as listed in the Turdata file
+        :param tur_num: the Tur Tur number, as listed in the Turdata file
         :type tur_num: int
         :param tur_segment_summaries: A dict of TurTurSegmentSummaries with
                                       key:value == Segment Number:TurTurSegmentSummary.
