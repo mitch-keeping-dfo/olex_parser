@@ -1,7 +1,6 @@
 from olexparser.segment_file import SegmentFile
 
 
-# noinspection GrazieInspection
 class TurTur:
     """
     A Class used to represent a Tur Tur (trip) from the Turdata file.
@@ -186,7 +185,6 @@ class TurTur:
         for seg_num in self.segments_summaries.keys():
             if not self.check_sample_size(seg_num):
                 warn = "Warning, expected size of Segment {} differs from actual size".format(seg_num)
-
                 self.warnings.append(warn)
 
         return
@@ -197,7 +195,7 @@ class TurTur:
         actual size of the :class:`SegmentFile` on disk.
         :param seg_num: the Segment Number to check
         :type seg_num: int
-        :return: True if if expected and actual sizes are the same, False otherwise
+        :return: True if expected and actual sizes are the same, False otherwise
         :rtype: bool
         """
         expected_size = self.segments_summaries[seg_num].get_entries_num() * 16
