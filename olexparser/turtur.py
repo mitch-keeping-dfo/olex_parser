@@ -191,6 +191,21 @@ class TurTur:
 
         return
 
+    def check_sample_size(self, seg_num):
+        """
+        Checks the expected size of the :class:`SegmentFile`, based on the :class:`TurTurSegmentSummary`, against the
+        actual size of the :class:`SegmentFile` on disk.
+        :param seg_num: the Segment Number to check
+        :type seg_num: int
+        :return: True if if expected and actual sizes are the same, False otherwise
+        :rtype: bool
+        """
+        expected_size = self.segments_summaries[seg_num].get_entries_num() * 16
+        actual_size = self.segments[seg_num].get_size()
+        if actual_size != expected_size:
+            return False
+        return True
+
     def get_segment_numbers(self):
         """
         :return: The segment numbers of every :class:`SegmentFile<olexparser.segment_file.SegmentFile>` associated
