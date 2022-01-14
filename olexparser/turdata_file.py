@@ -158,7 +158,7 @@ class TurDataFile:
 
     def to_gpx(self):
         """
-        :return: The data from the :class:`TurDataFile` as a GPX object
+        :return: The data from the :class:`TurDataFile` as a gpxpy.gpx.GPX object
         :rtype: :class:`gpxpy.gpx.GPX`
         """
         gpx = gpxpy.gpx.GPX()
