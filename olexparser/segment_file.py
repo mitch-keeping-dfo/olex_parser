@@ -134,7 +134,7 @@ class SegmentFile:
         :return: the dictionary of SegmentEntry objects with key:value - file_offset:SegmentEntry
         :rtype: dict
         """
-        return self.seg_entries
+        return self.seg_entries.copy()
 
     def get_full_path(self):
         """Returns the full file path for the segment file.
