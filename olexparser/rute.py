@@ -32,6 +32,25 @@ class Rute:
         :param rute: a string containing a Rute from the Ruter file
         :type rute: str
         """
+
+        self.rute_entries = []
+        self.plottsett = -1  # all plottsett are a positive value
+        self.layer = ""
+        self.rute_type = ""
+        self.rute_color = ""
+        self.rute_name = ""
+        self.notes_text = ""
+
+        self.warnings = []
+
+        self.parse_rute(rute)
+
+    def parse_rute(self, rute):
+        """
+        Parses the Rute string.
+        :param rute: A string containing the identified Rute from the :class:`RuterFile`
+        :type rute: str
+        """
         plot_layer_names = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
                             "A1", "B1", "C1", "D1", "E1", "F1", "G1", "H1", "I1", "J1",
                             "A2", "B2", "C2", "D2", "E2", "F2", "G2", "H2", "I2", "J2",
@@ -45,17 +64,6 @@ class Rute:
         line_color_re = r'Linjefarge (.*)'  # Linjefarge
         rute_name_re = r'Rute (.*)'  # Rute name
         rute_entry_re = r'([-\d.]+) ([-\d.]+) (\d+) (.+)'  # Rute Data points
-
-        self.rute_entries = []
-        self.plottsett = -1  # all plottsett are a positive value
-        self.layer = ""
-        self.rute_type = ""
-        self.rute_color = ""
-        self.rute_name = ""
-        self.notes_text = ""
-
-        self.warnings = []
-
         layer_matches = re.findall(plot_layer_re, rute)
         if len(layer_matches) == 1:
             layer_number = int(layer_matches[0])
@@ -98,6 +106,8 @@ class Rute:
             notes.remove("")
         if re.match(rute_entry_re, notes[-1]) is None:
             self.notes_text = notes[-1]
+
+        return
 
     def __str__(self):
         """A descriptive string representation of the Rute class
