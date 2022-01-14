@@ -143,3 +143,10 @@ class SegmentFile:
         :rtype: str
         """
         return self.full_path
+
+    def to_gpx(self):
+        """
+        .. todo: add gpx conversion to SegmentFile
+        :return:
+        """
+        return
