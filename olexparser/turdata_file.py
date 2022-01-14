@@ -162,6 +162,9 @@ class TurDataFile:
         :rtype: :class:`gpxpy.gpx.GPX`
         """
         gpx = gpxpy.gpx.GPX()
+        gpx.name = 'Turdata file'
+        gpx.description = 'Data found in the Turdata file found at {}'.format(self.full_path)
+
         for tur_tur_number in self.get_tur_numbers():
             tur_tur = self.get_turtur(tur_tur_number)
 
