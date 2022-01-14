@@ -148,7 +148,7 @@ class Rute:
         :return: the list of identified :class:`RuteEntry` objects
         :rtype: list
         """
-        return self.rute_entries
+        return self.rute_entries.copy()
 
     def get_plottsett(self):
         """
