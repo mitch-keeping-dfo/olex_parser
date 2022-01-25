@@ -10,7 +10,7 @@ class SegmentFile:
     A Class representing a Segment file.
 
     A Segment file consists of a number of 16 byte entries.
-    See :class:`olexparser.segment_entry.SegmentEntry` for a description of a segment entry.
+    See :class:`SegmentEntry<olexparser.segment_entry.SegmentEntry>` for a description of a segment entry.
 
     :param file_path: the full file path of the Segment file
     :type file_path: str
@@ -87,9 +87,10 @@ class SegmentFile:
     def parse_segment_file(self):
         """ Internal method which parses the segment file.
 
-        parse_segment_file reads the segment file as a binary stream and creates a SegmentEntry object
+        parse_segment_file reads the segment file as a binary stream and creates a
+        :class:`SegmentEntry<olexparser.segment_entry.SegmentEntry>` object
         for each 16 byte line in the file. A warning is generated if the file is not divisible by 16,
-        and the remaining bytes are ignored.
+        and the last 15 (or fewer) bytes of the file are ignored.
 
         See :class:`SegmentEntry<olexparser.segment_entry.SegmentEntry>` for a description of a segment entry.
         """
@@ -137,9 +138,11 @@ class SegmentFile:
         return self.seg_num
 
     def get_seg_entries(self):
-        """Returns the dictionary of SegmentEntry objects with key:value - file_offset:SegmentEntry
+        """Returns the dictionary of :class:`SegmentEntry<olexparser.segment_entry.SegmentEntry>` objects with
+           key:value - file_offset:SegmentEntry
 
-        :return: the dictionary of SegmentEntry objects with key:value - file_offset:SegmentEntry
+        :return: the dictionary of :class:`SegmentEntry<olexparser.segment_entry.SegmentEntry>` objects with
+           key:value - file_offset:SegmentEntry
         :rtype: dict
         """
         return self.seg_entries.copy()
