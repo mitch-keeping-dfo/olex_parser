@@ -21,7 +21,7 @@ class TurTur:
     :param tur_segment_summaries: A list of TurTurSegmentSummaries.
     :type tur_segment_summaries: list
 
-    .. todo:: check that min/max values in summary match min/max in segment file
+    .. todo:: test min/max values checking
     """
     def __init__(self, tur_num, tur_segment_summaries):
         """A constructor method for TurTur
@@ -60,8 +60,6 @@ class TurTur:
 
     def check_min_max(self, seg_num):
         """
-        .. todo:: check that min/max values in summary match min/max in segment file
-
         Checks the min and max values for the latitude, longitude, and time in the :class:`TurTurSegmentSummary`
         against the :class:`SegmentFile`.
 
