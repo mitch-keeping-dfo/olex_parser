@@ -18,6 +18,8 @@ other_files = []
 
 warnings = []
 
+# .. todo: test startstopplogg file, appears to be start/stop times for olex running
+
 
 def walk_folder(folder):
     """Parse a folder structure and identify OLEX files, including the Ruter file, the Turdata file,
