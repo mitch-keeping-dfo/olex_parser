@@ -10,7 +10,7 @@ class RuterFile:
     """A class representing a Ruter file.
 
     A ruter file consists of a number of Rutes (Routes).
-    See :class:`olexparser.rute.Rute` for a description of a Rute.
+    See :class:`Rute<olexparser.rute.Rute>` for a description of a Rute.
 
     The Ruter file is a text file. The first line of the file will be  "Ferdig forenklet" ("Completely simplified").
     This line may also appear elsewhere in the file.
@@ -110,7 +110,7 @@ class RuterFile:
 
     def get_rutes(self):
         """
-        :return: A list of Rutes identified in the RuterFile
+        :return: A list of :class:`Rutes<olexparser.rute.Rute>` identified in the RuterFile
         :rtype: list
         """
         return self.rutes.copy()
@@ -129,7 +129,7 @@ class RuterFile:
         """
         .. todo: test RuterFile.to_gpx
 
-        :return The data from the :class:`RuterFile` as a gpxpy.gpx.GPX object.
+        :return: The data from the RuterFile as a :class:`gpxpy.gpx.GPX` object.
         :rtype: :class:`gpxpy.gpx.GPX`
         """
         gpx = gpxpy.gpx.GPX()
