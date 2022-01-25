@@ -125,6 +125,7 @@ class RuterFile:
     def to_gpx(self):
         """
         .. todo: test RuterFile.to_gpx
+
         :return The data from the :class:`RuterFile` as a gpxpy.gpx.GPX object.
         :rtype: :class:`gpxpy.gpx.GPX`
         """
