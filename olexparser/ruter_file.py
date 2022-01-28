@@ -127,28 +127,12 @@ class RuterFile:
 
     def to_gpx(self):
         """
-        .. todo: test RuterFile.to_gpx
-
         :return: The data from the RuterFile as a :class:`gpxpy.gpx.GPX` object.
         :rtype: :class:`gpxpy.gpx.GPX`
         """
         gpx = gpxpy.gpx.GPX()
-
+        desc = "Rutes (routes) identified in the RuterFile: {}".format(self.full_path)
+        gpx.description = desc
         for rute in self.rutes:
-            route = gpxpy.gpx.GPXRoute()
-            route.name = rute.get_rute_name()
-            route.comment = rute.get_notes()
-            route.type = rute.get_rute_type()
-            desc = 'Plottsett: {} (Olex Layer {}). Rute Color: {}'.format(rute.get_plottsett(), rute.get_layer(),
-                                                                          rute.get_rute_color())
-            route.description = desc
-
-            for point in rute.get_rute_entries():
-                lat = convert.get_lat_or_long_dd(point.get_lat_float())
-                long = convert.get_lat_or_long_dd(point.get_long_float)
-                timestamp = convert.get_timestamp_str_from_int(point.get_timestamp_int())
-                icon_str = point.get_icon_str()
-                route.points.append(gpxpy.gpx.GPXRoutePoint(latitude=lat, longitude=long,
-                                                            time=timestamp, symbol=icon_str))
-            gpx.routes.append(route)
+            gpx.routes.append(rute.to_gpx())
         return gpx
