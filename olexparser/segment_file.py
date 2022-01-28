@@ -157,14 +157,13 @@ class SegmentFile:
 
     def to_gpx(self):
         """
-        .. todo: add gpx conversion to SegmentFile
-
-        :return: The data from the :class:`SegmentFile` as a gpxpy.gpx.GPX object.
-        :rtype: :class:`gpxpy.gpx.GPX`
+        :return: The data from the :class:`SegmentFile<olexparser.segment_file.SegmentFile> as a
+            :class:`gpxpy.gpx.GPXTrackSegment`
+        :rtype: :class:`gpxpy.gpx.GPXTrackSegment`
         """
+        track_seg = gpxpy.gpx.GPXTrackSegment()
 
-        gpx = gpxpy.gpx.GPX()
+        for entry in self.seg_entries.values():
+            track_seg.points.append(entry.to_gpx())
 
-
-
-        return
+        return track_seg
