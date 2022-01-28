@@ -1,6 +1,8 @@
 import re
 import math
 
+import gpxpy
+
 from olexparser.rute_entry import RuteEntry
 
 
@@ -224,3 +226,21 @@ class Rute:
         for entry in self.rute_entries:
             warn.extend(entry.get_warnings())
         return warn
+
+    def to_gpx(self):
+        """Returns the :class:`Rute<olexparser.rute.Rute>` as a :class:`gpxpy.gpx.GPXRoute` object.
+        The :class:`gpxpy.gpx.GPXRoute` contains all the :class:`RuteEntries<olexparser.rute_entry.RuteEntry>`,
+        as well as the Rute Type, Rute Name, any user notes identified, and a description.
+        The description contains the layer, color, and plottsett data.
+        :return: The :class:`Rute<olexparser.rute.Rute>` as a :class:`gpxpy.gpx.GPXRoute` object.
+        :rtype: :class:`gpxpy.gpx.GPXRoute`
+        """
+        gpx_route = gpxpy.gpx.GPXRoute()
+        gpx_route.type = self.rute_type
+        gpx_route.name = self.rute_name
+        gpx_route.comment = self.notes_text
+        gpx_route.description = "Layer: {}, Plottsett: {}, Color: {}".format(self.layer, self.plottsett,
+                                                                             self.rute_color)
+        for entry in self.rute_entries:
+            gpx_route.points.append(entry.to_gpx())
+        return gpx_route
