@@ -1,9 +1,6 @@
 import re
-
 import gpxpy
-
 from olexparser.rute import Rute
-from olexparser import convert
 
 
 class RuterFile:
