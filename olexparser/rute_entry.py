@@ -1,3 +1,5 @@
+import gpxpy
+
 import olexparser.convert as convert
 
 
@@ -107,3 +109,15 @@ class RuteEntry:
         :rtype: list
         """
         return self.warnings.copy()
+
+    def to_gpx(self):
+        """
+        :return: The :class:`RuteEntry<olexparser.rute_entry.RutEntry>` as a :class:`gpxpy.gpx.GPXRoutePoint` object.
+        :rtype: :class:`gpxpy.gpx.GPXRoutePoint`
+        """
+        rute_point = gpxpy.gpx.GPXRoutePoint(latitude=convert.get_lat_or_long_dd(self.lat),
+                                             longitude=convert.get_lat_or_long_dd(self.long),
+                                             time=convert.get_timestamp_str_from_int(self.timestamp),
+                                             symbol=self.icon)
+
+        return rute_point
