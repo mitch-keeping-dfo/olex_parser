@@ -1,3 +1,5 @@
+import gpxpy.gpx
+
 from olexparser.segment_file import SegmentFile
 
 
@@ -20,6 +22,10 @@ class TurTur:
     :type tur_num: int
     :param tur_segment_summaries: A list of TurTurSegmentSummaries.
     :type tur_segment_summaries: list
+    :var self.tur_num: The Tur Tur (Trip) number
+    :var self.segments_summaries: A dict of TurTurSegmentSummaries with
+                                      key:value == Segment Number:TurTurSegmentSummary.
+    :var self.segments: a dict of :class:`SegmentFile<olexparser.segment_file.SegmentFile>`
 
     .. todo:: test min/max values checking
     """
@@ -280,3 +286,14 @@ class TurTur:
         for seg in self.segments.values():
             warn.extend(seg.get_warnings())
         return warn
+
+    def to_gpx(self):
+        """
+        :return: The data from the :class:`TurTur>olexparser.turtur.TurTur>` as a :class:`gpxpy.gpx.GPXTrack` object.
+            Does not handle segment summaries
+        :rtype: :class:`gpxpy.gpx.GPXTrack`
+        """
+        trip = gpxpy.gpx.GPXTrack()
+        for segment in self.segments:
+            trip.segments.append(segment.to_gpx())
+        return trip
