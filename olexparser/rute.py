@@ -227,7 +227,7 @@ class Rute:
             warn.extend(entry.get_warnings())
         return warn
 
-    def to_gpx(self):
+    def to_gpx_route(self):
         """Returns the :class:`Rute<olexparser.rute.Rute>` as a :class:`gpxpy.gpx.GPXRoute` object.
         The :class:`gpxpy.gpx.GPXRoute` contains all the :class:`RuteEntries<olexparser.rute_entry.RuteEntry>`,
         as well as the Rute Type, Rute Name, any user notes identified, and a description.
