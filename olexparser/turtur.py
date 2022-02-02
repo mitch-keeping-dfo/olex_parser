@@ -295,6 +295,7 @@ class TurTur:
         """
         trip = gpxpy.gpx.GPXTrack()
         trip.name = "Tur Tur {}".format(self.tur_num)
+        trip.description = "Composed of Segments: {}".format(self.segments.keys())
         for segment in self.segments:
             trip.segments.append(segment.to_gpx_tracksegment())
         return trip
