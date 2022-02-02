@@ -242,5 +242,5 @@ class Rute:
         gpx_route.description = "Layer: {}, Plottsett: {}, Color: {}".format(self.layer, self.plottsett,
                                                                              self.rute_color)
         for entry in self.rute_entries:
-            gpx_route.points.append(entry.to_gpx())
+            gpx_route.points.append(entry.to_gpx_routepoint())
         return gpx_route
