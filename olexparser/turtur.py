@@ -294,6 +294,7 @@ class TurTur:
         :rtype: :class:`gpxpy.gpx.GPXTrack`
         """
         trip = gpxpy.gpx.GPXTrack()
+        trip.name = "Tur Tur {}".format(self.tur_num)
         for segment in self.segments:
             trip.segments.append(segment.to_gpx_tracksegment())
         return trip
