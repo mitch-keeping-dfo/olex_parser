@@ -122,7 +122,7 @@ class SegmentEntry:
         """
         return self.warnings.copy()
 
-    def to_gpx(self):
+    def to_gpx_trackpoint(self):
         """
         :return: The :class:`SegmentEntry<olexparser.segment_entry.SegmentEntry>` data
             (latitude, longitude, and timestamp) as a :class:`gpxpy.gpx.GPXTrackPoint` object.
