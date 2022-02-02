@@ -131,5 +131,5 @@ class RuterFile:
         desc = "Rutes (routes) identified in the RuterFile: {}".format(self.full_path)
         gpx.description = desc
         for rute in self.rutes:
-            gpx.routes.append(rute.to_gpx())
+            gpx.routes.append(rute.to_gpx_route())
         return gpx
