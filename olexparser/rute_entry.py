@@ -110,7 +110,7 @@ class RuteEntry:
         """
         return self.warnings.copy()
 
-    def to_gpx(self):
+    def to_gpx_routepoint(self):
         """
         :return: The :class:`RuteEntry<olexparser.rute_entry.RutEntry>` as a :class:`gpxpy.gpx.GPXRoutePoint` object.
         :rtype: :class:`gpxpy.gpx.GPXRoutePoint`
