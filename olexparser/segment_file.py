@@ -155,7 +155,7 @@ class SegmentFile:
         """
         return self.full_path
 
-    def to_gpx(self):
+    def to_gpx_tracksegment(self):
         """
         :return: The data from the :class:`SegmentFile<olexparser.segment_file.SegmentFile> as a
             :class:`gpxpy.gpx.GPXTrackSegment`
@@ -164,6 +164,6 @@ class SegmentFile:
         track_seg = gpxpy.gpx.GPXTrackSegment()
 
         for entry in self.seg_entries.values():
-            track_seg.points.append(entry.to_gpx())
+            track_seg.points.append(entry.to_gpx_trackpoint())
 
         return track_seg
