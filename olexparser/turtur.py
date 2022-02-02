@@ -287,7 +287,7 @@ class TurTur:
             warn.extend(seg.get_warnings())
         return warn
 
-    def to_gpx(self):
+    def to_gpx_track(self):
         """
         :return: The data from the :class:`TurTur>olexparser.turtur.TurTur>` as a :class:`gpxpy.gpx.GPXTrack` object.
             Does not handle segment summaries
@@ -295,5 +295,5 @@ class TurTur:
         """
         trip = gpxpy.gpx.GPXTrack()
         for segment in self.segments:
-            trip.segments.append(segment.to_gpx())
+            trip.segments.append(segment.to_gpx_tracksegment())
         return trip
