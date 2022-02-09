@@ -123,6 +123,9 @@ def main():
                 if seg_num in segment_files.keys():
                     turtur.add_segment(seg_num, SegmentFile(segment_files[seg_num]))
                     segment_files.pop(seg_num)
+                else:
+                    warn = "Warning, Tur Tur {} expects Segment {}, but it was not found.".format(turnum, seg_num)
+                    warnings.append(warn)
 
     if len(segment_files) > 0:
         for i in segment_files.keys():
