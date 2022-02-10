@@ -165,28 +165,28 @@ class TurTurSegmentSummary:
         """
         return self.num_entries
 
-    def get_lat_start_float(self):
+    def get_lat_min_float(self):
         """
         :return: the "OLEX" float representing smallest latitude value
         :rtype: float
         """
         return self.smallest_lat
 
-    def get_long_start_float(self):
+    def get_long_min_float(self):
         """
         :return: the "OLEX" float representing the smallest longitude value
         :rtype: float
         """
         return self.smallest_long
 
-    def get_lat_end_float(self):
+    def get_lat_max_float(self):
         """
        :return: the "OLEX" float representing the largest latitude value
        :rtype: float
         """
         return self.largest_lat
 
-    def get_long_end_float(self):
+    def get_long_max_float(self):
         """
         :return: the "OLEX" float representing the largest longitude value
         :rtype: float
