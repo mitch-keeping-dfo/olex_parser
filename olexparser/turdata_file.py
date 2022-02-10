@@ -179,21 +179,20 @@ class TurDataFile:
             trip.name = "Tur Tur {}".format(tur_tur_number)
             gpx_track_segment = gpxpy.gpx.GPXTrackSegment()
             trip.segments.append(gpx_track_segment)
-            gpx.tracks.append(trip)
+
             segments_summaries = tur_tur.get_segment_summaries()
+            comment = ''
             for summary in segments_summaries:
-                start_lat = convert.get_lat_or_long_dd(summary.get_lat_min_float())
-                start_long = convert.get_lat_or_long_dd(summary.get_long_min_float())
+                min_lat = convert.get_lat_or_long_dd(summary.get_lat_min_float())
+                min_long = convert.get_lat_or_long_dd(summary.get_long_min_float())
                 start_time = convert.get_timestamp_str_from_int(summary.get_time_start_int())
-                start_comment = "Segment {} start values".format(summary.get_seg_num())
-                start_point = gpxpy.gpx.GPXTrackPoint(start_lat, start_long, time=start_time, comment=start_comment)
-
-                stop_lat = convert.get_lat_or_long_dd(summary.get_lat_max_float())
-                stop_long = convert.get_lat_or_long_dd(summary.get_long_max_float())
+                max_lat = convert.get_lat_or_long_dd(summary.get_lat_max_float())
+                max_long = convert.get_lat_or_long_dd(summary.get_long_max_float())
                 stop_time = convert.get_timestamp_str_from_int(summary.get_time_end_int())
-                stop_comment = "Segment {} stop values".format(summary.get_seg_num())
-                stop_point = gpxpy.gpx.GPXTrackPoint(stop_lat, stop_long, time=stop_time, comment=stop_comment)
-
-                gpx_track_segment.points.append(start_point)
-                gpx_track_segment.points.append(stop_point)
+                comment += 'Segment {} Summary: Minimum Latitude Value: {}, Minimum Longitude Value: {}, ' \
+                           'Maximum Latitude Value: {}, Maximum Longitude Value: {}, ' \
+                           'Start Time: {}, End Time: {}\n'.format(summary.get_seg_num(), min_lat, min_long, max_lat,
+                                                                   max_long, start_time, stop_time)
+            trip.description += comment
+            gpx.tracks.append(trip)
         return gpx
